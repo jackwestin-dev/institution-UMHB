@@ -142,9 +142,9 @@ st.write(' ')
 st.write(' ')
 st.dataframe(df_engagement_attendance_weekly[['completed_lessons','completed_question_sets','time_spent_hrs']].sort_values(by='week',ascending=False).style.format(
     {
-        'completed_lessons' : '{:.2}',
-        'completed_question_sets' : '{:.2}',
-        'time_spent_hrs' : '{:.2}'
+        'completed_lessons' : '{:,.1f}',
+        'completed_question_sets' : '{:,.1f}',
+        'time_spent_hrs' : '{:,.1f}'
     }
 ),
 use_container_width=True
