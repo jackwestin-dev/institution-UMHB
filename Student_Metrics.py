@@ -100,7 +100,7 @@ st.altair_chart(line_engagement,use_container_width=True)
 st.write(' ')
 st.write(' ')
 st.subheader('Time Spent (Hrs)')
-st.write('_Includes the time spent on self-paced course video content_')
+st.write('_Includes the time spent on self-paced course content_')
 st.write (' ')
 st.write (' ')
 
