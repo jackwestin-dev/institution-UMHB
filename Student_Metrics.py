@@ -61,78 +61,6 @@ st.write(' ')
 st.write(' ')
 
 st.header('Engagement')
-st.subheader('Completed Lessons')
-
-st.write(' ')
-st.write(' ')
-
-line_engagement = alt.Chart(df_engagement_attendance_student_filtered).mark_line(point=True).transform_fold(
-        ['completed_lessons', 'completed_mandatory_lessons'],
-        as_=['variable', 'value']
-    ).encode(
-        x=alt.X(
-            'week:O',
-            axis=alt.Axis(
-                labelAngle=0,
-                title='Week'
-            )
-        ),
-        y=alt.Y(
-            'value:Q',
-            axis=alt.Axis(
-                title='Completed Count',
-            )
-        ),
-        tooltip=[
-            alt.Tooltip('week:O',title='Week'),
-            alt.Tooltip('value:Q',title='Completed Count')
-        ],
-        color=alt.Color(
-            'variable:N',
-            legend=alt.Legend(
-                title='Type',
-                orient='bottom',
-                labelExpr="datum.value == 'completed_lessons' ? 'Lessons' : 'Mandatory Lessons'"
-            )
-        )
-)
-
-st.altair_chart(line_engagement,use_container_width=True)
-
-st.write(' ')
-st.write(' ')
-
-st.subheader('Percentage of Mandatory Lessons Completed')
-
-st.write (' ')
-st.write (' ')
-
-line_time_pct_mandatory_completed = alt.Chart(df_engagement_attendance_student_filtered).mark_line(point=True).encode(
-    x=alt.X(
-        'week:O',
-        axis=alt.Axis(
-            labelAngle=0,
-            title='Week'
-        )
-    ),
-    y=alt.Y(
-        'percentage_mandatory_complete',
-        axis=alt.Axis(
-            title='% Mandatory Lessons Completed',
-            format='%'
-        )
-    ),
-    tooltip=[
-            alt.Tooltip('week:O',title='Week'),
-            alt.Tooltip('percentage_mandatory_complete',title='Pct Mandatory Lessons Complete',format='0.1%')
-    ],
-)
-
-st.altair_chart(line_time_pct_mandatory_completed, use_container_width=True)
-
-st.write(' ')
-st.write(' ')
-
 st.subheader('Completed Questions Sets')
 
 st.write(' ')
@@ -164,7 +92,7 @@ st.write(' ')
 st.write(' ')
 
 st.subheader('Time Spent (Hrs)')
-st.write('_Includes the time spent on self-paced course content_')
+st.write('_Includes the time spent on self-paced course video content_')
 
 st.write (' ')
 st.write (' ')
