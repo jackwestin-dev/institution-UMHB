@@ -122,6 +122,40 @@ st.altair_chart(line_time_spent, use_container_width=True)
 st.write(' ')
 st.write(' ')
 
+st.header('Accuracy')
+
+st.write(' ')
+st.write(' ')
+
+line_accuracy = alt.Chart(df_engagement_attendance_student_filtered).mark_line(point=True).transform_fold(
+    fold=['sciences_accuracy', 'cars_accuracy','class_accuracy'], 
+    as_=['variable', 'value']
+).encode(
+    x=alt.X(
+        'week:O',
+        axis=alt.Axis(
+            labelAngle=0,
+            title='Week'
+        )
+    ),
+    y=alt.Y(
+        'value:Q',
+        axis=alt.Axis(
+            title='Accuracy Score',
+            format='%'
+        )
+    ),
+    tooltip=[
+        alt.Tooltip('week:O',title='Week'),
+        alt.Tooltip('value:Q',title='Accuracy Rate',format='0.1%')
+    ],
+    color=alt.Color('variable:N',legend=alt.Legend(title='Subject',orient='bottom'))
+)
+
+st.altair_chart(line_accuracy,use_container_width=True)
+
+st.write(' ')
+st.write(' ')
 st.header('Attendance')
 
 st.write(' ')
@@ -164,40 +198,8 @@ st.altair_chart(line_attendance,use_container_width=True)
 st.write(' ')
 st.write(' ')
 
-st.header('Accuracy')
-st.write(' ')
-st.write(' ')
-
-line_accuracy = alt.Chart(df_engagement_attendance_student_filtered).mark_line(point=True).transform_fold(
-    fold=['sciences_accuracy', 'cars_accuracy','class_accuracy'], 
-    as_=['variable', 'value']
-).encode(
-    x=alt.X(
-        'week:O',
-        axis=alt.Axis(
-            labelAngle=0,
-            title='Week'
-        )
-    ),
-    y=alt.Y(
-        'value:Q',
-        axis=alt.Axis(
-            title='Accuracy Score',
-            format='%'
-        )
-    ),
-    tooltip=[
-        alt.Tooltip('week:O',title='Week'),
-        alt.Tooltip('value:Q',title='Accuracy Rate',format='0.1%')
-    ],
-    color=alt.Color('variable:N',legend=alt.Legend(title='Subject',orient='bottom'))
-)
-
-st.altair_chart(line_accuracy,use_container_width=True)
-
-st.write(' ')
-st.write(' ')
 st.header('Practice Exams')
+
 st.write(' ')
 st.write(' ')
 
