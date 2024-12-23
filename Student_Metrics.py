@@ -122,7 +122,7 @@ st.altair_chart(line_time_spent, use_container_width=True)
 st.write(' ')
 st.write(' ')
 
-st.subheader('Attendance')
+st.header('Attendance')
 
 st.write(' ')
 st.write(' ')
@@ -164,8 +164,7 @@ st.altair_chart(line_attendance,use_container_width=True)
 st.write(' ')
 st.write(' ')
 
-st.header('Performance')
-st.subheader('Accuracy')
+st.header('Accuracy')
 st.write(' ')
 st.write(' ')
 
