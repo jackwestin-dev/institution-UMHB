@@ -62,7 +62,7 @@ st.write(' ')
 
 st.header('Engagement')
 st.subheader('Time Spent (Hrs)')
-st.write('_Includes the time spent on self-paced course video content_')
+st.write('_Includes time spent within the self-paced course including watched video content and completed homework and digital textbook assignments. It also includes time spent using the JW question bank_')
 
 st.write (' ')
 st.write (' ')
