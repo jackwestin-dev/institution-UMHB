@@ -127,6 +127,7 @@ st.altair_chart(line_accuracy,use_container_width=True)
 st.write(' ')
 st.write(' ')
 st.header('Attendance')
+st.write('_This section shows the cumulative attendance rates for both Workshop sessions (large group) and Office Hours (small group). The attendance rate is calculated by dividing the number of sessions attended by the total number of scheduled sessions in one week._')
 
 st.write(' ')
 st.write(' ')
