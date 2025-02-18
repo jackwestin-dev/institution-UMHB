@@ -115,23 +115,7 @@ use_container_width=True
 
 st.write(' ')
 st.write(' ')
-st.header('Average Participation Class Data')
-st.write(' ')
-st.write(' ')
-st.subheader('Attendance')
-st.write(' ')
-st.write(' ')
-st.dataframe(
-    df_engagement_attendance_weekly[['attendance']].sort_values(by='week',ascending=False).style.format(
-    {
-        'attendance' : '{:.1%}'
-    }
-),
-use_container_width=True
-)
-st.write(' ')
-st.write(' ')
-st.subheader('Engagement')
+st.header('Engagement')
 st.write(' ')
 st.write(' ')
 st.dataframe(df_engagement_attendance_weekly[['completed_lessons','completed_question_sets','time_spent_hrs']].sort_values(by='week',ascending=False).style.format(
